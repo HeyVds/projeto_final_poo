@@ -18,3 +18,4 @@ Camila Santos|850.929.469-00|1991-02-03|SI20230017|Matematica_1,5.5,6.0,5.75|Ban
 Beatriz Oliveira|683.913.241-00|1996-12-24|SI20230018|Banco_de_Dados,7.5,8.0,7.75|Engenharia_de_Software,8.5,8.0,8.25|Redes_de_Computadores,6.5,6.0,6.25|Programacao_Orientada_Objetos,9.0,8.5,8.75|Ciencia_da_Computacao,7.0,6.5,6.75
 Vinícius Mendes|622.531.543-00|1993-09-07|SI20230019|Logica_de_Programacao,6.5,7.0,6.75|Engenharia_de_Software,8.0,7.5,7.75
 Isabela Lima|767.284.743-00|1998-10-25|SI20230020|Redes_de_Computadores,7.5,8.0,7.75|Engenharia_de_Software,9.0,9.5,9.25
+asd|123.123.123-11|1234-12-21|123123123|
