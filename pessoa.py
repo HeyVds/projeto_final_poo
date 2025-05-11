@@ -45,7 +45,7 @@ class Aluno(Pessoa):  # Classe Aluno que herda de pessoa
         self.disciplinas.append(disciplina)
 
     def exibir_dados(self):
-        info = f"Aluno: {self.nome}, Matrícula: {self.__matricula}, Data Nasc.: {self.data_nascimento}"
+        info = f"Aluno: {self.nome}\n Matrícula: {self.__matricula}\n Data Nasc.: {self.data_nascimento}"
         info += f"\n  CPF: {self.get_cpf()}"
         if self.__notas:
             info += f"\n  Notas: {', '.join(map(str, self.__notas))}"
@@ -78,6 +78,9 @@ class Professor(Pessoa):  # Clase Professor que herda de pessoa
         self.__siape = siape
         self.disciplinas = []
 
+    def get_siape(self):  # Método getter para siape
+        return self.__siape
+    
     # Adicionar disciplina ao professor
     def adicionar_disciplina(self, disciplina):
             if disciplina not in self.disciplinas:
