@@ -11,8 +11,6 @@ class Disciplina:
         if aluno not in self.alunos_matriculados:
                 self.alunos_matriculados.append(aluno)
 
-
-    
     def exibir_dados(self):
         info = f"Disciplina: {self.nome} ({self.codigo})"
         info += f"\n  Professor Responsável: {self.professor_responsavel.nome}"
