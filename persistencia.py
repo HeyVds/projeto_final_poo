@@ -94,8 +94,8 @@ def salvar_professor(prof):
   try:
     with open(arquivo_professores, "a", encoding="utf-8") as arquivo:
       disciplinas_nomes = ",".join(d.nome for d in prof.disciplinas)
-      linha = f"{prof.siape}|{prof.nome}|{prof.cpf}|{prof.data_nascimento}|{disciplinas_nomes}\n"
-      arquivo.write(linha)
+      linha = f"{prof.get_siape()}|{prof.nome}|{prof.get_cpf()}|{prof.data_nascimento}|{disciplinas_nomes}"
+      arquivo.write(str(linha)+'\n')
   finally:
     print(f"Professor {prof.nome} salvo.")
 
@@ -108,7 +108,8 @@ def salvar_aluno(aluno):
         linha_disc = f"{d.nome}," + ",".join(map(str, notas))
         dados_disciplinas.append(linha_disc)
       linha = f"{aluno.nome}|{aluno.get_cpf()}|{aluno.data_nascimento}|{aluno.get_matricula()}|"
-      arquivo.write(linha)
+      arquivo.write(str(linha)+'\n')
+      
   finally:
     print(f"Aluno {aluno.nome} salvo.")
 
@@ -116,10 +117,53 @@ def salvar_disciplina(disc):
   try:
     with open(arquivo_disciplinas, "a", encoding="utf-8") as arquivo:
       nomes_alunos = ",".join(a.nome for a in disc.alunos_matriculados)
-      linha = f"{disc.codigo}|{disc.nome}|{disc.professor_responsavel.nome}|{nomes_alunos}\n"
-      arquivo.write(linha)
+      linha = f"{disc.codigo}|{disc.nome}|{disc.professor_responsavel.nome}|{nomes_alunos}"
+      arquivo.write(str(linha)+'\n')
   finally:
       print(f"Disciplina {disc.nome} salva.")
+
+
+
+def atualizar_aluno(aluno):
+    try:
+        with open(arquivo_alunos, "w", encoding="utf-8") as arquivo:
+            for a in alunos:
+                dados_disciplinas = []
+                for d in a.disciplinas:
+                  notas = a.notas_por_disciplina.get(d.nome, [])
+                  linha_disc = f"{d.nome}," + ",".join(map(str, notas))
+                  dados_disciplinas.append(linha_disc)
+                linha = f"{a.nome}|{a.get_cpf()}|{a.data_nascimento}|{a.get_matricula()}|{'|'.join(dados_disciplinas)}\n"
+                arquivo.write(str(linha)+'\n')
+    finally:
+        print(f"Dados de aluno {aluno.nome} atualizados.")
+
+
+def atualizar_disciplina(disc):
+    try:
+        with open(arquivo_disciplinas, "w", encoding="utf-8") as arquivo:
+            for d in disciplinas:
+                if d.nome == disc.nome:
+                    nomes_alunos = ",".join(a.nome for a in d.alunos_matriculados)
+                    linha = f"{d.codigo}|{d.nome}|{d.professor_responsavel.nome}|{nomes_alunos}\n"
+                    arquivo.write(linha)
+                else:
+                    nomes_alunos = ",".join(a.nome for a in d.alunos_matriculados)
+                    linha = f"{d.codigo}|{d.nome}|{d.professor_responsavel.nome}|{nomes_alunos}\n"
+                    arquivo.write(linha)
+    finally:
+        print(f"Dados da disciplina {disc.nome} atualizados.")
+
+def atualizar_professor(professor):
+    try:
+        with open(arquivo_professores, "w", encoding="utf-8") as arquivo:
+            for p in professores:
+
+                disciplinas_nomes = ",".join(d.nome for d in p.disciplinas)
+                linha = f"{p.get_siape()}|{p.nome}|{p.get_cpf()}|{p.data_nascimento}|{disciplinas_nomes}\n"
+                arquivo.write(linha)
+    finally:
+        print(f"Dados do professor {professor.nome} atualizados.")
 
 def inicializar_dados():
     carregar_professores()
