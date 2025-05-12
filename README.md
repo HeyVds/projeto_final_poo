@@ -1,6 +1,6 @@
 # Projeto Final - Programação Orientada a Objetos
 
-Este projeto é o trabalho final da disciplina de Programação Orientada a Objetos (POO), desenvolvido por Victor Mafra, Ricardo Junior e DSouza-29. O objetivo é implementar um sistema de gerenciamento acadêmico que permita o cadastro e gerenciamento de alunos, professores e disciplinas, com persistência de dados em arquivos `.txt`.([GitHub][1])
+Este projeto é o trabalho final da disciplina de Programação Orientada a Objetos (POO), desenvolvido por Victor Mafra, Ricardo Junior e DSouza-29. O objetivo é implementar um sistema de gerenciamento acadêmico que permita o cadastro e gerenciamento de alunos, professores e disciplinas, com persistência de dados em arquivos `.txt`.
 
 ## Estrutura do Projeto
 
@@ -57,5 +57,5 @@ projeto_final_poo/
 ## 👥 Contribuidores
 
 - [HeyVds (Victor Mafra)](https://github.com/HeyVds)
-- [Ricardo-junior-ps](https://github.com/Ricardo-junior-ps)
-- [DSouza-29](https://github.com/DSouza-29)
+- [Ricardo-junior-ps (Ricardo Junior)](https://github.com/Ricardo-junior-ps)
+- [DSouza-29 (Denner Souza)](https://github.com/DSouza-29)
